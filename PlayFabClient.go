@@ -64,11 +64,11 @@ func New(secret, titleId, catalogVersion string, opts ...Option) (*PlayFab, erro
 		IdleConnTimeout:     time.Minute * 1,
 	}
 	pf := &PlayFab{
-		secret:         secret,
-		catalogVersion: catalogVersion,
-		titleId:        titleId,
-		logger:         &noopLogger{},
-		hc: &http.Client{
+		Secret:         secret,
+		CatalogVersion: catalogVersion,
+		TitleId:        titleId,
+		Logger:         &noopLogger{},
+		HC: &http.Client{
 			Transport: transport,
 			Timeout:   time.Second * 10,
 		},
